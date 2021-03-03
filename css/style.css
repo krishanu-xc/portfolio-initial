@@ -71,6 +71,9 @@
   .nav-mxw {
     padding: 0 70px;
   }
+  .content-home{
+    top: 30%;
+  }
   .menu-button {
     display: block;
     z-index: 99;
@@ -166,12 +169,12 @@
   background-size: cover;
 }
 .home-mxw {
-  margin: auto 0 auto 40px;
+  margin: auto 0 auto 0px;
 }
 
 .content-home {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 70px;
+  padding-right: 20px;
   position: absolute;
   font-family: "Poiret One", cursive;
 }
