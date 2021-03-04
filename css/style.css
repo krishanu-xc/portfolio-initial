@@ -5,7 +5,12 @@
   box-sizing: border-box;
 }
 
+:root{
+  --highlights: #0d8f8f
+}
+
 /*navbar style*/
+
 
 .navbar {
   position: fixed;
@@ -17,7 +22,7 @@
 }
 .navbar.sticky {
   padding: 10px 0;
-  background: #0d8f8f;
+  background: var(--highlights);
 }
 .nav-mxw {
   display: flex;
@@ -28,7 +33,7 @@
 }
 .logo {
   font-size: 50px;
-  color: #0d8f8f;
+  color: var(--highlights);
   font-family: "Big Shoulders Stencil Text", cursive;
   transition: 0.4s;
 }
@@ -47,11 +52,29 @@
   font-family: "Major Mono Display", monospace;
 }
 .menu li span{
-    color: #0d8f8f;
+    color: var(--highlights);
+}
+.menu li a::after{
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  margin-top: 5px;
+  background-color: var(--highlights);
+  transition: width 0.3s;
+  transform: translateX(50%);
+}
+.navbar.sticky .menu li a::after{
+  background-color: #ffffff;
 }
 .menu li a:hover {
-  color: #0d8f8f;
+  color: var(--highlights);
 }
+.menu li a:hover::after{
+  width: 50%;
+  transition: width 0.3s;
+}
+
 .navbar.sticky .menu li a:hover {
   color: #ffffff;
 }
@@ -79,10 +102,10 @@
     z-index: 99;
   }
   .navbar.sticky .menu li a:hover {
-    color: #0d8f8f;
+    color: var(--highlights);
   }
   .navbar.sticky .menu li span{
-      color: #0d8f8f;
+      color: var(--highlights);
   }
   .menu-button i.active::before {
     content: "\f00d";
@@ -109,7 +132,12 @@
     margin: 40px 0;
     font-size: 25px;
   }
-  
+  .menu li a::after{
+    background-color: var(--highlights);
+  }
+  .navbar.sticky .menu li a::after{
+    background-color: var(--highlights);
+  }
   .content-about .column {
     width: 30%;
   }
@@ -195,22 +223,46 @@
   color: #ffffff;
 }
 
-.content-home .text-2 span:before {
-  color: #0d8f8f;
+.content-home .text-2 span::before {
+  color: var(--highlights);
   font-weight: 200;
-  content: "Web Developer";
-  animation: animate infinite 8s;
+  content: "Web Developer ";
+  animation-name: animate;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+
 }
 
 @keyframes animate {
   0% {
     content: "Web Developer";
+    color: var(--highlights);
+  }
+  11% {
+    color: #ffffff00;
+  }
+  22% {
+    color: var(--highlights);
   }
   33% {
     content: "ML Enthusiast";
+    color: var(--highlights);
+  }
+  44% {
+    color: #ffffff00;
+  }
+  55% {
+    color: var(--highlights);
   }
   66% {
     content: "Student";
+    color: var(--highlights);
+  }
+  77% {
+    color: #ffffff00;
+  }
+  88% {
+    color: var(--highlights);
   }
 }
 
@@ -259,7 +311,7 @@
   bottom: -14px;
   font-size: 20px;
   background: #ffffff;
-  color: #0d8f8f;
+  color: var(--highlights);
   left: 50%;
   padding: 5px;
   transform: translateX(-50%);
@@ -269,7 +321,7 @@
 }
 .about-subheading {
   font-size: 25px;
-  color: #0d8f8f;
+  color: var(--highlights);
   margin-bottom: 10px;
   font-weight: 800;
   font-family: "Poiret One", cursive;
@@ -291,17 +343,17 @@
 
 .content-about .material a {
   display: inline-block;
-  background: #0d8f8f;
+  background: var(--highlights);
   color: #ffffff;
   font-size: 15px;
   padding: 15px 20px;
   margin-top: 15px;
   border-radius: 5px;
   transition: 0.4s;
-  border: 2px solid #0d8f8f;
+  border: 2px solid var(--highlights);
 }
 .content-about .material a:hover {
-  color: #0d8f8f;
+  color: var(--highlights);
   background: none;
 }
 
@@ -345,7 +397,7 @@
   bottom: -14px;
   font-size: 20px;
   background: #000000;
-  color: #0d8f8f;
+  color: var(--highlights);
   left: 50%;
   padding: 5px;
   transform: translateX(-50%);
@@ -355,7 +407,7 @@
 }
 .projects-subheading {
   font-size: 25px;
-  color: #0d8f8f;
+  color: var(--highlights);
   margin-bottom: 10px;
   font-weight: 800;
   font-family: "Poiret One", cursive;
@@ -379,17 +431,17 @@
 
 .content-projects a {
   display: inline-block;
-  background: #0d8f8f;
+  background: var(--highlights);
   color: #ffffff;
   font-size: 15px;
   padding: 10px 15px;
   margin-top: 15px;
   border-radius: 5px;
   transition: 0.4s;
-  border: 2px solid #0d8f8f;
+  border: 2px solid var(--highlights);
 }
 .content-projects a:hover {
-  color: #0d8f8f;
+  color: var(--highlights);
   background: none;
 }
 
@@ -441,7 +493,7 @@
   bottom: -14px;
   font-size: 20px;
   background: #ffffff;
-  color: #0d8f8f;
+  color: var(--highlights);
   left: 50%;
   padding: 5px;
   transform: translateX(-50%);
@@ -460,7 +512,7 @@
 /*footer section*/
 .footer {
   background: #000000;
-  color: #0d8f8f;
+  color: var(--highlights);
   text-align: center;
   padding: 50px;
   font-size: 12px;
@@ -469,7 +521,7 @@
 }
 
 .footer-mxw a {
-  color: #0d8f8f;
+  color: var(--highlights);
   display: flex;
   justify-content: center;
 }
