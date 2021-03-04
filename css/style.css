@@ -9,6 +9,11 @@
   --highlights: #0d8f8f
 }
 
+.menu-adjust{
+  width: 100%;
+  height: 40px;
+  background-color: #ffffff00;
+}
 /*navbar style*/
 
 
